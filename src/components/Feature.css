@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.feature-container {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  grid-template-rows: 10vw 25vw;
+  background-color: black;
+}
+
+.featured-title {
+  grid-row: 1;
+  grid-column: 2;
+  text-align: center;
+  color: white;
+  font-size: 7.5vw;
+  font-weight: Bold;
+  width: 80%;
+  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu,
+    sans-serif;
+}
