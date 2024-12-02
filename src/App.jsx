@@ -1,17 +1,18 @@
 import "./App.css";
-import Header from "./components/Header.jsx";
-import Hero from "./components/Hero.jsx";
-import Feature from "./components/Feature.jsx";
-import Footer from "./components/Footer.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import HomeView from "../src/views/HomeView.jsx";
+import RegisterView from "../src/views/RegisterView.jsx";
+import LoginView from "../src/views/LoginView.jsx";
 
 function App() {
   return (
-    <>
-      <Header />
-      <Hero />
-      <Feature />
-      <Footer />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/register" element={<RegisterView />} />
+        <Route path="/login" element={<LoginView />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
