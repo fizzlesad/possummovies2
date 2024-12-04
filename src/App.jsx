@@ -14,7 +14,7 @@ function App() {
         <Route path="/register" element={<RegisterView />} />
         <Route path="/login" element={<LoginView />} />
         <Route path="/movies" element={<MoviesView />}>
-          <Route path="genres" element={<GenreView />} />
+          <Route path="genre/:genre_id" element={<GenreView />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -9,7 +9,7 @@ function Genres(props) {
         {
           props.genresList.map((item) => {
             return (
-              <a href="">
+              <a href={`/movies/genre/${item.id}`}>
                 <li key={item.id}>{item.genre}</li>
               </a>
             )
