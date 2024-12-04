@@ -1,7 +1,6 @@
 /* Container for Register Form */
 .register-container {
   width: 100%;
-  max-width: 400px;
   padding: 20px;
   background: rgba(0, 0, 0, 0.75);
   border-radius: 8px;
@@ -36,10 +35,11 @@
 
 /* Register Button */
 .register-button {
+  max-width: 600px;
   width: 100%;
   padding: 10px;
   margin-top: 10px;
-  background: #e50914; /* Netflix Red */
+  background: blue;
   color: #fff;
   font-size: 1em;
   border: none;
@@ -49,7 +49,7 @@
 }
 
 .register-button:hover {
-  background: #f40612; /* Slightly brighter red for hover */
+  background: rgb(78, 78, 255); /* Slightly brighter red for hover */
 }
 
 .login-link {
@@ -59,7 +59,7 @@
 }
 
 .login-link a {
-  color: #e50914;
+  color: rgb(106, 106, 255);
   text-decoration: none;
 }
 

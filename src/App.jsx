@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomeView from "../src/views/HomeView.jsx";
 import RegisterView from "../src/views/RegisterView.jsx";
 import LoginView from "../src/views/LoginView.jsx";
+import GenreView from "../src/views/GenreView.jsx";
+import MoviesView from "../src/views/MoviesView.jsx";
 
 function App() {
   return (
@@ -11,6 +13,9 @@ function App() {
         <Route path="/" element={<HomeView />} />
         <Route path="/register" element={<RegisterView />} />
         <Route path="/login" element={<LoginView />} />
+        <Route path="/movies" element={<MoviesView />}>
+          <Route path="genres" element={<GenreView />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
