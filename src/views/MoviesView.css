@@ -29,7 +29,7 @@ button:hover {
     background-color: red;
     display: grid;
     grid-template-rows: 150px, 150px, 150px, 150px;
-    grid-template-columns: 30% minmax(120px, 30%), 70%;
+    grid-template-columns: 10% 90%;
 }
 
 .genre-list {

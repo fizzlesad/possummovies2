@@ -1,5 +1,6 @@
 .test {
-    height:100px;
-    width:100px;
-    background-color: blueviolet;
+    height:100%;
+    width:100%;
+    background-color: rgb(18, 18, 40);
+    grid-column: 2;
 }
