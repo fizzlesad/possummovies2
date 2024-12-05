@@ -56,7 +56,7 @@ body {
 }
 
 .login-button:hover {
-  background: rgb(60, 60, 255)
+  background: rgb(60, 60, 255);
 }
 
 .register-link {
@@ -66,5 +66,5 @@ body {
 }
 
 .register-link a {
-  color: rgb(72, 72, 250)
+  color: rgb(72, 72, 250);
 }

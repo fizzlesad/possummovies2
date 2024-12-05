@@ -10,10 +10,10 @@ function Header() {
       </Link>
       <p class="title">Possum</p>
       <Link to={`/login`}>
-      <button class="sign-in-button">Sign In</button>
+        <button class="sign-in-button">Sign In</button>
       </Link>
       <Link to={`/register`}>
-      <button class="sign-up-button">Sign Up</button>
+        <button class="sign-up-button">Sign Up</button>
       </Link>
     </div>
   );

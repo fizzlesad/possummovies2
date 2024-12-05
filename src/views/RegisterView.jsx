@@ -18,18 +18,27 @@ function RegisterView() {
             <input type="password" id="password" name="password" required />
 
             <label htmlFor="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password" name="confirm-password" required />
+            <input
+              type="password"
+              id="confirm-password"
+              name="confirm-password"
+              required
+            />
 
-            <button type="submit" className="register-button">Register</button>
+            <button type="submit" className="register-button">
+              Register
+            </button>
           </form>
           <Link to={`/login`}>
-            <p className="login-link">Already have an account? <a href="#">Login</a></p>
+            <p className="login-link">
+              Already have an account? <a href="#">Login</a>
+            </p>
           </Link>
         </div>
       </div>
       <Footer />
     </>
-  )
+  );
 }
 
 export default RegisterView;

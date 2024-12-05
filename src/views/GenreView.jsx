@@ -13,7 +13,9 @@ function GenreView() {
 
   const movieData = async () => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${params.genre_id}&api_key=${import.meta.env.VITE_TMDB_KEY}`
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${
+        params.genre_id
+      }&api_key=${import.meta.env.VITE_TMDB_KEY}`
     );
     setMovieArray(response.data.results);
     setMovie(movieArray);
@@ -22,8 +24,8 @@ function GenreView() {
       setTotalPages(500);
     }
     setDone(true);
-    console.log(response)
-  }
+    console.log(response);
+  };
 
   const movePage = (x) => {
     setDone(false);
@@ -35,7 +37,7 @@ function GenreView() {
       setPage(page + x);
     }
     movieData();
-  }
+  };
 
   const setCurrentPage = (x) => {
     setDone(false);
@@ -45,7 +47,7 @@ function GenreView() {
       setPage(x);
     }
     movieData();
-  }
+  };
 
   useEffect(() => {
     movieData();
@@ -74,7 +76,7 @@ function GenreView() {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default GenreView;

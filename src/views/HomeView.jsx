@@ -5,14 +5,14 @@ import Feature from "../components/Feature.jsx";
 import Footer from "../components/Footer.jsx";
 
 function HomeView() {
-    return (
-        <>
-            <Header />
-            <Hero />
-            <Feature />
-            <Footer />
-        </>
-    )
+  return (
+    <>
+      <Header />
+      <Hero />
+      <Feature />
+      <Footer />
+    </>
+  );
 }
 
 export default HomeView;
