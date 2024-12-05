@@ -24,7 +24,6 @@ const DetailView = () => {
     setVideos(trailerData.data.results);
     setInformation(movieDetails.data);
     setDone(true);
-    console.log(movieDetails);
   };
 
   useEffect(() => {

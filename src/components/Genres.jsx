@@ -1,8 +1,6 @@
 import "./Genres.css";
 
 function Genres(props) {
-  console.log(props.genresList);
-
   return (
     <div class="genres-container">
       <ul>
