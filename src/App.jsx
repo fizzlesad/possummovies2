@@ -8,6 +8,7 @@ import MoviesView from "../src/views/MoviesView.jsx";
 import DetailView from "../src/views/DetailView.jsx";
 
 function App() {
+  console.log(import.meta.env.REACT_APP_API_KEY);
   return (
     <BrowserRouter>
       <Routes>

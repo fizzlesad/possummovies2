@@ -12,10 +12,10 @@ const DetailView = () => {
 
   const options = async () => {
     const movieDetails = await axios.get(
-      `https://api.themoviedb.org/3/movie/${params.id}?language=en-US&api_key=2504360aa5c1db5862cf6d7813be21b2`
+      `https://api.themoviedb.org/3/movie/${params.id}?language=en-US&api_key=${import.meta.env.VITE_TMDB_KEY}`
     );
     const trailerData = await axios.get(
-      `https://api.themoviedb.org/3/movie/${params.id}/videos?language=en-US&api_key=2504360aa5c1db5862cf6d7813be21b2`
+      `https://api.themoviedb.org/3/movie/${params.id}/videos?language=en-US&api_key=${import.meta.env.VITE_TMDB_KEY}`
     );
     setVideos(trailerData.data.results);
     setInformation(movieDetails.data);

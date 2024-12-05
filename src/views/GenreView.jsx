@@ -13,7 +13,7 @@ function GenreView() {
 
   const movieData = async () => {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${params.genre_id}&api_key=2504360aa5c1db5862cf6d7813be21b2`
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${params.genre_id}&api_key=${import.meta.env.VITE_TMDB_KEY}`
     );
     setMovieArray(response.data.results);
     setMovie(movieArray);
@@ -51,30 +51,30 @@ function GenreView() {
     movieData();
   }, [done]);
 
-    return (
+  return (
     <div className="movie-posters">
-    <div className="genre-view">
-      <div className="movies-container">
-        {movieArray.map((movies) => (
-          <a key={movie.id} href={`/movies/details/${movies.id}`}>
-            <img
-              src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
-              alt={movie.title}
-              className="movie-poster"
-            />
-          </a>
-        ))}
-        <div class="pagination">
-          <a onClick={() => setCurrentPage(1)}>&laquo;</a>
-          <a onClick={() => movePage(-1)}>{"<"}</a>
-          <a class="active">{page}</a>
-          <a onClick={() => movePage(1)}>{">"}</a>
-          <a onClick={() => setCurrentPage(totalPages)}>&raquo;</a>
+      <div className="genre-view">
+        <div className="movies-container">
+          {movieArray.map((movies) => (
+            <a key={movie.id} href={`/movies/details/${movies.id}`}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+                alt={movie.title}
+                className="movie-poster"
+              />
+            </a>
+          ))}
+          <div class="pagination">
+            <a onClick={() => setCurrentPage(1)}>&laquo;</a>
+            <a onClick={() => movePage(-1)}>{"<"}</a>
+            <a class="active">{page}</a>
+            <a onClick={() => movePage(1)}>{">"}</a>
+            <a onClick={() => setCurrentPage(totalPages)}>&raquo;</a>
+          </div>
         </div>
       </div>
     </div>
-    </div>
-    )
+  )
 }
 
 export default GenreView;

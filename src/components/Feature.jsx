@@ -10,7 +10,7 @@ function Feature() {
   const [done, setDone] = useState(false);
 
   async function data() {
-    const options = await axios.get("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=2504360aa5c1db5862cf6d7813be21b2")
+    const options = await axios.get(`https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=${import.meta.env.VITE_TMDB_KEY}`)
     setMovieArray(options.data.results);
     setMovie1(movieArray[Math.floor(Math.random() * movieArray.length)]);
     setMovie2(movieArray[Math.floor(Math.random() * movieArray.length)]);
