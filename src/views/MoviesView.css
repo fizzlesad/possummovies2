@@ -24,9 +24,8 @@ button:hover {
 }
 
 .movies-view-container {
-    height: 600px;
+    height: auto;
     width: 100%;
-    background-color: red;
     display: grid;
     grid-template-rows: 150px, 150px, 150px, 150px;
     grid-template-columns: 10% 90%;

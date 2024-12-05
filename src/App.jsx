@@ -5,6 +5,7 @@ import RegisterView from "../src/views/RegisterView.jsx";
 import LoginView from "../src/views/LoginView.jsx";
 import GenreView from "../src/views/GenreView.jsx";
 import MoviesView from "../src/views/MoviesView.jsx";
+import DetailView from "../src/views/DetailView.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<LoginView />} />
         <Route path="/movies" element={<MoviesView />}>
           <Route path="genre/:genre_id" element={<GenreView />} />
+          <Route path="details/:movie_id" element={<DetailView />} />
         </Route>
       </Routes>
     </BrowserRouter>

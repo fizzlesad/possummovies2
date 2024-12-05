@@ -1,30 +1,75 @@
 import "./GenreView.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function GenreView() {
   const [done, setDone] = useState(false);
   const [movieArray, setMovieArray] = useState([]);
   const [movie, setMovie] = useState({});
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(0);
+  const params = useParams();
 
-  async function movieData() {
-    const options = await axios.get("https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1&api_key=2504360aa5c1db5862cf6d7813be21b2")
-    setMovieArray(options.data.results);
+  const movieData = async () => {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=${page}&sort_by=popularity.desc&with_genres=${params.genre_id}&api_key=2504360aa5c1db5862cf6d7813be21b2`
+    );
+    setMovieArray(response.data.results);
     setMovie(movieArray);
+    setTotalPages(response.data.total_pages);
+    if (totalPages >= 500) {
+      setTotalPages(500);
+    }
     setDone(true);
-  };
+  }
+
+  const movePage = (x) => {
+    setDone(false);
+    if (page + x >= 500) {
+      setPage(totalPages);
+    } else if (page + x <= 1) {
+      setPage(1);
+    } else {
+      setPage(page + x);
+    }
+    movieData();
+  }
+
+  const setCurrentPage = (x) => {
+    setDone(false);
+    if (x >= 500) {
+      setPage(totalPages);
+    } else {
+      setPage(x);
+    }
+    movieData();
+  }
+
+  useEffect(() => {
+    movieData();
+  }, [done]);
 
   return (
     <>
-      {movieArray.map((movies) => (
-        <a key={movie.id} href={`/movies/genre/${movies.id}`}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
-            alt=""
-          />
-        </a>
-      ))}
-      <div className="test"></div>
+      <div className="movies-container">
+        {movieArray.map((movies) => (
+          <a key={movie.id} href={`/movies/details/${movies.id}`}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${movies.poster_path}`}
+              alt={movie.title}
+              className="movie-poster"
+            />
+          </a>
+        ))}
+        <div class="pagination">
+          <a onClick={() => setCurrentPage(1)}>&laquo;</a>
+          <a onClick={() => movePage(-1)}>{"<"}</a>
+          <a class="active">{page}</a>
+          <a onClick={() => movePage(1)}>{">"}</a>
+          <a onClick={() => setCurrentPage(totalPages)}>&raquo;</a>
+        </div>
+      </div>
     </>
   );
 }
