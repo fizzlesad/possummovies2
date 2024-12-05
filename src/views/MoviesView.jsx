@@ -3,10 +3,8 @@ import "./MoviesView.css";
 import React from 'react';
 import './GenreView.css';
 import Genres from "../components/Genres.jsx"
-import { useState } from 'react';
 import Header from "../components/Header.jsx";
 import Footer from "../components/Footer.jsx";
-import GenreView from "../views/GenreView.jsx";
 
 function MoviesView() {
     const genres = [
@@ -62,8 +60,10 @@ function MoviesView() {
         <>
             <Header />
             <div className="movies-view-container">
-                <Genres genresList={genres} className="genre-list" />
-                <GenreView className="movie-posters" />
+                <div>
+                    <Genres genresList={genres} className="genre-list" />
+                </div>
+                <Outlet className="movie-posters" />
             </div>
             <Footer />
             <button onClick={() => logout()} className="logout-button">Logout</button>

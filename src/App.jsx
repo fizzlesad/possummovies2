@@ -16,7 +16,7 @@ function App() {
         <Route path="/login" element={<LoginView />} />
         <Route path="/movies" element={<MoviesView />}>
           <Route path="genre/:genre_id" element={<GenreView />} />
-          <Route path="details/:movie_id" element={<DetailView />} />
+          <Route path="details/:id" element={<DetailView />} />
         </Route>
       </Routes>
     </BrowserRouter>

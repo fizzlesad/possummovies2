@@ -51,8 +51,9 @@ function GenreView() {
     movieData();
   }, [done]);
 
-  return (
-    <>
+    return (
+    <div className="movie-posters">
+    <div className="genre-view">
       <div className="movies-container">
         {movieArray.map((movies) => (
           <a key={movie.id} href={`/movies/details/${movies.id}`}>
@@ -71,8 +72,9 @@ function GenreView() {
           <a onClick={() => setCurrentPage(totalPages)}>&raquo;</a>
         </div>
       </div>
-    </>
-  );
+    </div>
+    </div>
+    )
 }
 
 export default GenreView;
