@@ -22,6 +22,7 @@ function GenreView() {
       setTotalPages(500);
     }
     setDone(true);
+    console.log(response)
   }
 
   const movePage = (x) => {
